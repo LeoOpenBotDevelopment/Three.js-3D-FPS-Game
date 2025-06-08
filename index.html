@@ -29,28 +29,36 @@
             background: transparent;
             border: none;
             pointer-events: none; /* No interaction */
+            border-radius: 25px;
+            border-bottom-left-radius: 0;
+            overflow: hidden;
         }
         #playerHealthBar {
             width: 100%; /* Initial health */
             height: 100%;
-            background: linear-gradient(90deg, green, lightgreen);;
+            background: linear-gradient(90deg, green, lightgreen);
+            border-top-right-radius: 10px;
         }
 
         /* Energy Bar */
         #energyBarContainer {
             position: absolute;
-            top: 50px; /* Under health bar */
+            top: 46px; /* Under health bar */
             left: 20px;
             width: 200px;
             height: 20px;
             background: transparent;
             border: none;
             pointer-events: none;
+            border-radius: 25px;
+            border-top-left-radius: 0;
+            overflow: hidden;
         }
         #energyBar {
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, #00BFFF, #87CEEB); /* Sky blue gradient */
+            border-bottom-right-radius: 10px;
         }
 
         /* Joystick */
@@ -186,7 +194,7 @@
         #restartButton {
             padding: 15px 30px;
             margin-top: 20px;
-            background: linear-gradient(to right, #FF4500, #FF8C00, #FFD700);;
+            background: radial-gradient(circle at center, rgba(80, 80, 80, 0.6) 0%, rgba(40, 40, 40, 0.6) 80%, transparent 100%);
             color: white;
             border: none;
             border-radius: 5px;
@@ -196,6 +204,8 @@
         }
         #restartButton:hover {
             background-color: #45a049;
+            /*background: linear-gradient(to right, #FF4500, #FF8C00, #FFD700);*/
+            background: radial-gradient(circle at center, #FF4500 0%, #FF8C00 80%, transparent 100%);
         }
 
         /* Compass/Navigation Bar */
@@ -206,7 +216,8 @@
             transform: translateX(-50%);
             width: 300px; /* Width of the compass bar */
             height: 30px; /* Height of the compass bar */
-            background-color: rgba(0, 0, 0, 0.7);
+            /*background-color: rgba(0, 0, 0, 0.7);*/
+            background: radial-gradient(circle at center, rgba(80, 80, 80, 0.6) 0%, rgba(40, 40, 40, 0.6) 80%, transparent 100%);
             border-radius: 5px;
             display: flex;
             justify-content: space-between; /* Distribute N, S, O, W */
@@ -344,8 +355,8 @@
             left: 50%;
             width: 15px; /* Size of the dot */
             height: 15px;
-            background-color: white;
-            border-radius: 50%;
+            background: linear-gradient(0deg, transparent, white, transparent);
+            border-radius: 0;
             transform: translateX(-50%); /* Center horizontally */
             transition: top 0.05s ease-out; /* Smooth movement */
         }
@@ -431,7 +442,6 @@
         </div>
 
         <div id="compassBar">
-            <div class="direction" style="position: absolute; left: 0;">B</div>
             <div class="direction" style="position: absolute; left: 25%; transform: translateX(-50%);">L</div>
             <div class="direction" style="position: absolute; left: 50%; transform: translateX(-50%);">M</div>
             <div class="direction" style="position: absolute; left: 75%; transform: translateX(-50%);">R</div>
